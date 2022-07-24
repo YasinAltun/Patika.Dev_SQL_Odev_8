@@ -17,17 +17,17 @@ Kolay Gelsin.
 # ÇÖZÜMLER
 
 ## 1.test veritabanınızda employee isimli sütun bilgileri id(INTEGER), name VARCHAR(50), birthday DATE, email VARCHAR(100) olan bir tablo oluşturalım.
-'''
+```
 CREATE TABLE employee(
 	id serial ,
 	name varchar(50) ,
 	birthday date,
 	email varchar(100)
 );
+```
 
-'''
 ## 2.Oluşturduğumuz employee tablosuna 'Mockaroo' servisini kullanarak 50 adet veri ekleyelim.
-
+```
 insert into employee (name, birthday, email) values ('Rod', '1954-06-21', 'rpenniall0@bloomberg.com');
 insert into employee (name, birthday, email) values ('Marge', '1989-08-21', 'mfreyne1@usda.gov');
 insert into employee (name, birthday, email) values ('Dana', '2002-01-23', 'dlembke2@w3.org');
@@ -78,12 +78,40 @@ insert into employee (name, birthday, email) values ('Christalle', '2008-09-04',
 insert into employee (name, birthday, email) values ('Joice', '1971-07-15', 'jkeepin1b@freewebs.com');
 insert into employee (name, birthday, email) values ('Cati', '1961-09-24', 'cfrake1c@wisc.edu');
 insert into employee (name, birthday, email) values ('Clari', '1974-03-11', 'cwittleton1d@biblegateway.com');
-
+```
 ## 3.Sütunların her birine göre diğer sütunları güncelleyecek 5 adet UPDATE işlemi yapalım.
+```
+UPDATE employee
+		 SET name = 'Yasin ' ,
+		 email ='yasin@gmail.com' ,
+		 birthday ='1995-5-12'
+		 WHERE id = 1 ;
 
-
+UPDATE employee
+		 SET name = 'Altun' ,
+		 email ='altun@gmail.com' ,
+		 birthday ='1985-05-12'
+		 WHERE id = 2 ;
+UPDATE employee
+		 SET name = 'Yakup  ' ,
+		 email ='yakup@gmail.com' ,
+		 birthday ='1997-08-24'
+		 WHERE id = 3 ;
+UPDATE employee
+		 SET name = 'kronos ' ,
+		 email ='kronos@gmail.com' ,
+		 birthday ='2021-03-15'
+		 WHERE id = 4 ;
+UPDATE employee
+		 SET name = 'Ali ' ,
+		 email ='ali@gmail.com' ,
+		 birthday ='1984-02-24'
+		 WHERE id = 5 ;
+```
 ## 4.Sütunların her birine göre ilgili satırı silecek 5 adet DELETE işlemi yapalım.
-
-
-
+```
+DELETE FROM employee
+		WHERE id IN (1,2,3,4,5)
+		RETURNING *;
+```
 İYİ ÇALIŞMALAR
